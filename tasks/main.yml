@@ -10,6 +10,7 @@
 - name: LINUX | Configure shell to use Pyenv
   lineinfile:
     state: present
+    create: yes
     dest: "{{ pyenv_shell[ansible_env.SHELL | basename]['config_file'] }}"
     line: "{{ item }}"
   loop: "{{ pyenv_shell[ansible_env.SHELL | basename]['lines'] }}"

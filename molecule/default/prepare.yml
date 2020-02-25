@@ -1,8 +1,15 @@
 - hosts: all
   become: yes
-  gather_facts: no
+  gather_facts: yes
 
   tasks:
-    - package:
+    - yum:
         name: git
         state: present
+      when: ansible_facts.pkg_mgr in ['yum', 'dnf']
+
+    - apt:
+        name: git
+        state: present
+        update_cache: yes
+      when: ansible_facts.pkg_mgr == 'apt'

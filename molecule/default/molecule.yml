@@ -3,7 +3,7 @@ dependency:
 driver:
   name: docker
 lint: |
-  ansible-lint -x 204,403,502
+  ansible-lint -x 204,401,403,502 --exclude molecule/
   yamllint -c molecule/default/yamllint.yml .
 platforms:
   - name: pyenv-test

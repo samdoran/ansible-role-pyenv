@@ -1,0 +1,6 @@
+- name: LINUX | Clone Pyenv repo
+  git:
+    repo: "{{ pyenv_repo_url }}"
+    dest: "{{ pyenv_chdir }}/{{ pyenv_repo_dest }}"
+  tags:
+    - pyenv

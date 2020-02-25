@@ -1,0 +1,17 @@
+- name: Include distribution specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+  tags:
+    - pyenv
+
+- include_tasks: "install-{{ pyenv_install_method }}.yml"
+  tags:
+    - pyenv
+
+- name: LINUX | Configure shell to use Pyenv
+  lineinfile:
+    state: present
+    dest: "{{ pyenv_shell[ansible_env.SHELL | basename]['config_file'] }}"
+    line: "{{ item }}"
+  loop: "{{ pyenv_shell[ansible_env.SHELL | basename]['lines'] }}"
+  tags:
+    - pyenv

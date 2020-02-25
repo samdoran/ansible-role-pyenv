@@ -1,0 +1,16 @@
+pyenv_shell:
+  bash:
+    config_file: ~/.bash_profile
+    lines:
+      - 'export PYENV_ROOT="$HOME/.pyenv"'
+      - 'export PATH="$PYENV_ROOT/bin:$PATH"'
+  zsh:
+    config_file: ~/.zshenv
+    lines:
+      - 'export PYENV_ROOT="$HOME/.pyenv"'
+      - 'export PATH="$PYENV_ROOT/bin:$PATH"'
+  fish:
+    config_file: ~/.config/fish/config.fish
+    lines:
+      - 'status --is-interactive; and source (pyenv init - | psub)'
+      - 'status --is-interactive; and source (pyenv virtualenv-init - | psub)'

@@ -3,7 +3,7 @@ services: docker
 
 env:
   global:
-    - ROLE_NAME: {{ cookiecutter.role_name }}
+    - ROLE_NAME: pyenv
   matrix:
     - MOLECULE_DISTRIBUTION: centos6
     - MOLECULE_DISTRIBUTION: centos7

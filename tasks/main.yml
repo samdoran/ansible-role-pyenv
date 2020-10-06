@@ -13,6 +13,7 @@
     create: yes
     dest: "{{ pyenv_shell[ansible_env.SHELL | basename]['config_file'] }}"
     line: "{{ item }}"
+    mode: '0644'
   loop: "{{ pyenv_shell[ansible_env.SHELL | basename]['lines'] }}"
   tags:
     - pyenv

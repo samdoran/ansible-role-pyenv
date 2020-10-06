@@ -1,4 +1,4 @@
-pyenv_shell:
+_pyenv_shell:
   bash:
     config_file: ~/.bash_profile
     lines:

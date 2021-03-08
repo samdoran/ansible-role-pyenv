@@ -2,5 +2,6 @@
   git:
     repo: "{{ pyenv_repo_url }}"
     dest: "{{ pyenv_chdir }}/{{ pyenv_repo_dest }}"
+  become_user: "{{ pyenv_user }}"
   tags:
     - pyenv

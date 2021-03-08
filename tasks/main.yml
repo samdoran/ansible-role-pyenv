@@ -11,9 +11,10 @@
   lineinfile:
     state: present
     create: yes
-    dest: "{{ _pyenv_shell[ansible_env.SHELL | basename]['config_file'] }}"
+    dest: "{{ _pyenv_shell[pyenv_shell | basename]['config_file'] }}"
     line: "{{ item }}"
     mode: '0644'
-  loop: "{{ _pyenv_shell[ansible_env.SHELL | basename]['lines'] }}"
+  loop: "{{ _pyenv_shell[pyenv_shell | basename]['lines'] }}"
+  become_user: "{{ pyenv_user }}"
   tags:
     - pyenv

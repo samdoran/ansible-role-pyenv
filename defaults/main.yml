@@ -1,3 +1,5 @@
 pyenv_repo_url: https://github.com/yyuu/pyenv.git
 pyenv_repo_dest: .pyenv
 pyenv_chdir: "{{ ansible_facts.user_dir }}"
+pyenv_user: root
+pyenv_shell: "{{ ansible_env.SHELL }}"

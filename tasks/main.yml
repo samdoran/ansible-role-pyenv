@@ -7,7 +7,7 @@
   tags:
     - pyenv
 
-- name: LINUX | Configure shell to use Pyenv
+- name: Configure shell to use Pyenv
   lineinfile:
     state: present
     create: yes
@@ -15,6 +15,17 @@
     line: "{{ item }}"
     mode: '0644'
   loop: "{{ _pyenv_shell[pyenv_shell | basename]['lines'] }}"
+  become: yes
   become_user: "{{ pyenv_user }}"
+  tags:
+    - pyenv
+
+- name: Install Python versions using Pyenv
+  command: ~{{ pyenv_user }}/{{ pyenv_repo_dest }}/bin/pyenv install --skip-existing {{ item }}
+  become: yes
+  become_user: "{{ pyenv_user }}"
+  loop: "{{ pyenv_install_versions }}"
+  register: result
+  changed_when: "'Installed' in result.stdout"
   tags:
     - pyenv

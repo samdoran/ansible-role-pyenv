@@ -1,4 +1,4 @@
-- name: MACOS | Install pyenv
+- name: Install pyenv
   homebrew:
     name: pyenv
     state: latest

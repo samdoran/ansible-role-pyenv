@@ -1,7 +1,6 @@
 pyenv
 =========
 [![Galaxy](https://img.shields.io/badge/galaxy-samdoran.pyenv-blue.svg?style=flat)](https://galaxy.ansible.com/samdoran/pyenv)
-[![Build Status](https://travis-ci.org/samdoran/ansible-role-pyenv.svg?branch=master)](https://travis-ci.org/samdoran/ansible-role-pyenv)
 
 Install [`pyenv`](https://github.com/pyenv/pyenv), a simple Python version manager. On macOS, installation is done via Homebrew. On Linux, the `pyenv` repository is cloned via `git`.
 

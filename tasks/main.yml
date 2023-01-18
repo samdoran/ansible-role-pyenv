@@ -21,7 +21,7 @@
     - pyenv
 
 - name: Install Python versions using Pyenv
-  command: ~{{ pyenv_user }}/{{ pyenv_repo_dest }}/bin/pyenv install --skip-existing {{ item }}
+  command: "{{ pyenv_repo_dest }}/bin/pyenv install --skip-existing {{ item }}"
   become: yes
   become_user: "{{ pyenv_user }}"
   loop: "{{ pyenv_install_versions }}"

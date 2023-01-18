@@ -1,3 +1,11 @@
+- name: Install support packages
+  action: "{{ ansible_facts.pkg_mgr }}"
+  args:
+    name: "{{ _pyenv_packages }}"
+    state: present
+  tags:
+    - pyenv
+
 - name: Clone pyenv repo
   git:
     repo: "{{ pyenv_repo_url }}"

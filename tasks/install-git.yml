@@ -13,3 +13,12 @@
   become_user: "{{ pyenv_user }}"
   tags:
     - pyenv
+
+- name: Clone plugins
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ pyenv_repo_dest }}/.plugins/{{ item.name }}"
+  become_user: "{{ pyenv_user }}"
+  loop: "{{ pyenv_plugins }}"
+  tags:
+    - pyenv

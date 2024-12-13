@@ -3,3 +3,6 @@ pyenv_user: root
 pyenv_repo_dest: ~{{ pyenv_user }}/.pyenv
 pyenv_shell: "{{ ansible_facts.env.SHELL }}"
 pyenv_install_versions: []
+pyenv_plugins:
+  - name: pyenv-virtualenv
+    repo: https://github.com/pyenv/pyenv-virtualenv.git

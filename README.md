@@ -20,6 +20,7 @@ Role Variables
 | `pyenv_user` | `root` | User account used to clone and configure `pyenv`. |
 | `pyenv_shell` | `ansible_env.SHELL` | Shell used for setting up `pyenv`. Controls the lines inserted and into which shell config file. Supported shells are `fish`, `zsh`, and `bash`. |
 | `pyenv_install_versions` | `[]` | List of Python versions to install. Must match a version in `pyenv install --list`. |
+| `pyenv_plugins` | see `defaults/main.yml` | List of `pyenv` plugins to install. |
 
 Dependencies
 ------------

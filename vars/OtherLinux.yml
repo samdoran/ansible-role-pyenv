@@ -1,0 +1,3 @@
+_pyenv_install_method: git
+_pyenv_packages:
+  - git

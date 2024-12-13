@@ -2,6 +2,7 @@ _pyenv_install_method: git
 _pyenv_packages:
   - build-essential
   - curl
+  - git
   - libbz2-dev
   - libffi-dev
   - liblzma-dev

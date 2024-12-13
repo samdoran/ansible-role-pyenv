@@ -16,7 +16,7 @@ Role Variables
 | Name              | Default Value       | Description          |
 |-------------------|---------------------|----------------------|
 | `pyenv_repo_url` | `https://github.com/yyuu/pyenv.git` | URL used to clone via `git`. |
-| `pyenv_repo_dest` | `{{ ansible_facts.user_dir }}/.pyenv` | Directory where `pyenv` will be cloned |
+| `pyenv_repo_dest` | `~{{ pyenv_user }}/.pyenv` | Directory where `pyenv` will be cloned |
 | `pyenv_user` | `root` | User account used to clone and configure `pyenv`. |
 | `pyenv_shell` | `ansible_env.SHELL` | Shell used for setting up `pyenv`. Controls the lines inserted and into which shell config file. Supported shells are `fish`, `zsh`, and `bash`. |
 | `pyenv_install_versions` | `[]` | List of Python versions to install. Must match a version in `pyenv install --list`. |

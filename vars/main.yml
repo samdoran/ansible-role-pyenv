@@ -12,5 +12,5 @@ _pyenv_shell:
   fish:
     config_file: ~/.config/fish/config.fish
     lines:
-      - 'status --is-interactive; and source (pyenv init - | psub)'
-      - 'status --is-interactive; and source (pyenv virtualenv-init - | psub)'
+      - 'status is-login; and pyenv init --path fish | source'
+      - 'status is-interactive; and pyenv init - fish | source'

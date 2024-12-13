@@ -12,5 +12,6 @@ _pyenv_shell:
   fish:
     config_file: ~/.config/fish/config.fish
     lines:
+      - 'set -x PATH $HOME/.pyenv/bin $PATH '
       - 'status is-login; and pyenv init --path fish | source'
       - 'status is-interactive; and pyenv init - fish | source'
